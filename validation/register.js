@@ -55,7 +55,7 @@ module.exports = function checkRegistrationFields(data){
         errors.password = "Password is required."
     }
     if(!Validator.isLength(data.password, {min: 8, max: 20})){
-        errors.password = "Passwordmust be greater than 8 characters";
+        errors.password = "Password must be greater than 8 characters";
 
     }
 
@@ -64,7 +64,7 @@ module.exports = function checkRegistrationFields(data){
         errors.password2 = "Confirmation password is required";
     }
     if(!Validator.equals(data.password, data.password2)){
-        errors.password2 = "Both password fields must match :)"
+        errors.password2 = "Both password fields must match"
     }
 
     // Return the errors from the checkRegistrationFields function

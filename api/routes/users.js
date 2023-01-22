@@ -53,4 +53,8 @@ router.post("/register", (req,res) => {
         
     });
 });
+
+router.get("/user", (req, res) =>{
+
+});
 module.exports = router;
