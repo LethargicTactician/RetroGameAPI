@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 //set up api
-app.use("/V1/users", userRoutes)
+app.use("/v1/users", userRoutes)
 
 const port = process.env.port ||3000;
 app.listen(port, () => console.log("Listening on port: " + port));
