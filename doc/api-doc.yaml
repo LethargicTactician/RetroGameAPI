@@ -1,0 +1,42 @@
+openapi: 3.1.0
+info:
+  title: Retro Game api
+  description: retro game hypermedia api
+  version: 1.0.0
+paths:
+  #Retro game api colletion
+  /v1/users:
+    get:
+      tags:
+        - users
+      summary: gets all users in existence
+      operationID: getUsers
+      response:
+        '200':
+        description: successful operation
+  /v1/users/{user-id}:
+    get:
+      tags: 
+        - users
+      summary: get all users
+      description: get all users by id
+      operationID: getUsersByID
+      parameters: 
+        - name: user-id
+          in: path
+          description: user id
+          required: true
+          schema:
+          type: integer
+      response: 
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#./api/routes/users'
+
+
+
+      
+components:

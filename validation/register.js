@@ -17,6 +17,32 @@ module.exports = function checkRegistrationFields(data){
     data.zip = !ifEmpty(data.zip)?data.zip:"";
 
     //making fields required/ be strict on the user
+    //username input
+    if(Validator.isEmpty(data.username)){
+        errors.username= "Username is required";
+    }
+
+    //street Address input
+    if(Validator.isEmpty(data.streetAddress)){
+        errors.streetAddress = "Street address is required";
+    }
+
+    //city input
+    if(Validator.isEmpty(data.city)){
+        errors.city = "City is required";
+    }
+
+    //state input
+    if(Validator.isEmpty(data.state)){
+        errors.state = "State is required";
+    }
+
+    //zip code input
+    if(Validator.isEmpty(data.zip)){
+        errors.zip = "Zipcode is required";
+    }
+
+    //email input
     if(Validator.isEmpty(data.email)){
         errors.email = "Email is required.";
     }
@@ -24,18 +50,21 @@ module.exports = function checkRegistrationFields(data){
         errors.email = "Email address is invalid";
     }
 
+    //password input
     if(Validator.isEmpty(data.password)){
         errors.password = "Password is required."
     }
-    if(!Validator.isLength(data.password, {min: 8, max: 120})){
-        errors.password = "Passwordmust be greater than 8 characters";
+    if(!Validator.isLength(data.password, {min: 8, max: 20})){
+        errors.password = "Password must be greater than 8 characters";
 
     }
+
+    //verify password
     if(Validator.isEmpty(data.password2)){
         errors.password2 = "Confirmation password is required";
     }
     if(!Validator.equals(data.password, data.password2)){
-        errors.password2 = "Both password fields must match :)"
+        errors.password2 = "Both password fields must match"
     }
 
     // Return the errors from the checkRegistrationFields function
