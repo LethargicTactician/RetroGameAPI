@@ -35,6 +35,21 @@ paths:
             application/json:
               schema:
                 $ref: '#./api/routes/users'
+  /v1/users/register:
+    post:
+      tags:
+        - users
+      operationID: checkRegistrationFields
+      response:
+        '200':
+          descrition: successfully registers a user and stores it into the database
+        '400':
+          description: failed to register a user
+  /v1/games:
+  /v1/games/register:
+  /v1/games/{gameId}:
+  /v1/offers:
+
 
 
 

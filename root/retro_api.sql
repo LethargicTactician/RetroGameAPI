@@ -4,7 +4,7 @@ CREATE DATABASE retrogame_api;
 
 
 CREATE TABLE users(
-    userid int,
+    user-id int,
     username varchar(128),
     email varchar(128),
     password varchar(128),
