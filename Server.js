@@ -6,6 +6,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const userRoutes = require("./api/routes/users");
 const gameRoutes = require("./api/routes/games");
+const offersRoute = require("./api/routes/offers")
 
 // Configure body-parser settings//
 // urlencoded is for bodies that have UTF-8 encoding.
@@ -17,6 +18,7 @@ app.use(bodyParser.json());
 //set up api
 app.use("/v1/users", userRoutes)
 app.use("/v1/games", gameRoutes)
+app.use("/v1/offers", offersRoute)
 
 const port = process.env.port ||3000;
 app.listen(port, () => console.log("Listening on port: " + port));

@@ -35,4 +35,13 @@ router.get("/getUsers", (req, res) =>{
     });
 
 });
+
+router.get("/getUsers/{user-id}", (req, res) =>{
+    database.query(`SELECT * FROM users WHERE user-id = "${req.body.user-id}"`, function(err, results){
+        if(err) throw(err);
+        console.log(results);
+
+    });
+
+});
 module.exports = router;
