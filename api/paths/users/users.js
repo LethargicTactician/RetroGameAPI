@@ -3,10 +3,10 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 //const crypto = require("crypto");
-const database = require("../../database.js")
+const database = require("../../../database.js")
 
 //validation
-const checkRegistrationFields =  require("../../validation/register");
+const checkRegistrationFields =  require("../../../validation/register");
 //const connection = require("../../database");
 
 

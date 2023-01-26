@@ -19,7 +19,7 @@ paths:
 
         '400':
           description: invalid
-  /v1/users/{user-id}:
+  /v1/users/{user-id}:Im
     parameters:
       $ref: '#components/schemas/users'
     get:

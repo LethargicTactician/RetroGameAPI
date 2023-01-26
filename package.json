@@ -21,7 +21,10 @@
     "body-parser": "^1.20.1",
     "crypto": "^1.0.1",
     "express": "^4.18.2",
+    "express-openapi": "^12.1.0",
     "mysql": "^2.18.1",
-    "validator": "^13.7.0"
+    "swagger-ui-express": "^4.6.0",
+    "validator": "^13.7.0",
+    "Validator": "^1.1.4"
   }
 }
