@@ -11,7 +11,8 @@ const database = mysql.createConnection({
     host:'localhost',
     user: 'root',
     password: 'Colacion#324265',
-    database: 'retrogame_api'
+    database: 'retrogame_api',
+    port: 3000
 });
 
 

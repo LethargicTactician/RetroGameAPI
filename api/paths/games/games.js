@@ -24,6 +24,7 @@ router.get("/getGames", (req, res)=>{
     });
 });
 
+//for postman testing
 // {
 //     "gamename": "Test-Man2",
 //     "publisher": "TesingDumDum",

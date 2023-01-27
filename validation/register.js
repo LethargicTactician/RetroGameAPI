@@ -1,4 +1,5 @@
 const Validator = require('validator');
+var http = require("http");
 const ifEmpty = require("./checkForEmpty");
 
 module.exports = function checkRegistrationFields(data){

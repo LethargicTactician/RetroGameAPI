@@ -32,7 +32,7 @@ module.exports = function (){
     GET.apiDoc = {
         summary: "gets all offers",
         parameters: [
-            {$ref: "components/schemas/offers/offer"}
+            {$ref: "#/components/parameters/schemas/offers"}
         ],
         operationId: "getOffers",
         responses:{
@@ -49,7 +49,7 @@ module.exports = function (){
     POST.apiDoc={
         summary: "register an offfer",
         parameters:[
-            {$ref: "#/componets/schemas/offers/offer"}
+            {$ref: "#/componets/parameters/schemas/offers"}
         ],
         operationId:"registerOffer",
         responses:{

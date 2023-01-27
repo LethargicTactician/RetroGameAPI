@@ -1,3 +1,4 @@
+var http = require("http");
 module.exports = function(){
     var operations = [
         GET,
@@ -12,7 +13,7 @@ module.exports = function(){
         console.log("Registered successfully");
     }
 
-    function GET(req, res, next){
+    function GET(req, res){
         database.query(`SELECT * FROM games`, function(err, results){
             if(err)throw(err);
             console.log(results);
@@ -24,7 +25,8 @@ module.exports = function(){
     GET.apiDoc = {
         summary: "gets all games",
         parameters: [
-            {$ref: "components/schemas/games/game"}
+
+            {$ref: "#/components/parameters/schemas/games"}
         ],
         operationId: "getGames",
         responses:{
@@ -41,7 +43,7 @@ module.exports = function(){
     POST.apiDoc={
         summary: "register a game",
         parameters:[
-            {$ref: "#/componets/schemas/games/game"}
+            {$ref: "#/componets/parameters/schemas/games"}
         ],
         operationId:"registerGame",
         responses:{

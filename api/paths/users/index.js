@@ -26,7 +26,7 @@ module.exports = function(){
     GET.apiDoc = {
         summary: "gets all users",
         parameters: [
-            {$ref: "components/schemas/users/user"}
+            {$ref: "#/components/parameters/schemas/users"}
         ],
         operationId: "getUsers",
         responses:{
@@ -43,7 +43,7 @@ module.exports = function(){
     POST.apiDoc={
         summary: "register a user",
         parameters:[
-            {$ref: "#/componets/schemas/users/user"}
+            {$ref: "#/componets/parameters/schemas/users"}
         ],
         operationId:"register",
         responses:{

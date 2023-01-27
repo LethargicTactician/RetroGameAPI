@@ -1,16 +1,19 @@
 //simple-api/server.js
 const express = require("express");
-
+var req = require('request');
+const router = express.Router();
+// var http = require("http");
 
 //express variablecalled "app"
 const app = express();
-import {initialize} from 'express-openapi';
+const {initialize} = require('express-openapi');
 const bodyParser = require("body-parser");
 const userRoutes = require("./api/paths/users/users");
 const gameRoutes = require("./api/paths/games/games");
 const offersRoute = require("./api/paths/offers/offers");
 const apiDoc= require("./api/apiDoc");
-const swggerUi = require('swagger-ui-express');
+const swaggerUi = require('swagger-ui-express');
+const { route } = require("./api/paths/users/users");
 
 
 // Configure body-parser settings//
@@ -37,18 +40,18 @@ initialize({
  app.use(
   "/apiDocs",
   swaggerUi.serve,
-  swaggerUi.setup(null,{
+  swaggerUi.setup(null, {
     swaggerOptions:{
       url:"http://localhost:3000/apiDoc"
     }
   })
- )
+ );
 
-const port = process.env.port ||3000;
+const port = process.env.port ||3050;
 app.listen(port, () => console.log("Listening on port: " + port));
 
 // Handling Errors
-app.use((err, req, res, next) => {
+app.use((req, res, next,err) => {
     // console.log(err);
     err.statusCode = err.statusCode || 500;
     err.message = err.message || "Internal Server Error";
@@ -56,3 +59,5 @@ app.use((err, req, res, next) => {
       message: err.message,
     });
 });
+
+module.exports = router

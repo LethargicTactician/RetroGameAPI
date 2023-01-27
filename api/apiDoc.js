@@ -9,25 +9,17 @@ const apiDoc = {
     components: {
         parameters: {
             userIdentity:{
-                name: "userId",
-                in: "path",
-                required: true,
-                schema:{
-                    $ref: "#/components/schemas/userId"
-                }
+                $ref: "#/components/parameters/schemas/users/userId"
+
             },
             statusUpdate:{
-                name: "status",
-                in: "path",
-                required:"true",
-                schema:{
-                    $ref: "#components/schemas/offers/offer/status"
-                }
+                $ref: "#components/parameters/schemas/offers/state"
             }
         },
         schemas: {
             games:{
-                game:{
+                type: "Object",
+                properties:{
                     gameId:{
                         type:"Integer"
                     },
@@ -46,11 +38,12 @@ const apiDoc = {
                     game_owners:{
                         type:"Integer"
                     }
-
                 }
+
             },
             users:{
-                user:{
+                type: "Object",
+                properties:{
                     userId:{
                         type:"Integer"
                     },
@@ -76,10 +69,12 @@ const apiDoc = {
                         type: "Integer"
                     }
                 }
-          
+                
             },
+
             offers:{
-                offer:{
+                type: "Object",
+                properties:{
                     offerId:{
                         type:"Integer"
                     },
@@ -93,6 +88,7 @@ const apiDoc = {
                         type: "Foreign Key/ Integer"
                     }
                 }
+                
             }
         }
         
