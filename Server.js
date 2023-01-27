@@ -8,12 +8,12 @@ const router = express.Router();
 const app = express();
 const {initialize} = require('express-openapi');
 const bodyParser = require("body-parser");
-const userRoutes = require("./api/paths/users/users");
-const gameRoutes = require("./api/paths/games/games");
-const offersRoute = require("./api/paths/offers/offers");
+const userRoutes = require("./api/paths/users/users.old");
+const gameRoutes = require("./api/paths/games/games.old");
+const offersRoute = require("./api/paths/offers/offers.old");
 const apiDoc= require("./api/apiDoc");
 const swaggerUi = require('swagger-ui-express');
-const { route } = require("./api/paths/users/users");
+const { route } = require("./api/paths/users/users.old");
 
 
 // Configure body-parser settings//

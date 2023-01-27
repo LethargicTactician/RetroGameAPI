@@ -4,7 +4,7 @@ module.exports = function(){
         POST
     ]
 
-    function GET(res,req, next){
+    function GET(req,res, next){
         database.query(`SELECT * FROM users`, function(err, results){
             if(err) throw(err);
             console.log(results);
@@ -12,7 +12,7 @@ module.exports = function(){
         });
     }
 
-    function POST(res, req, next){
+    function POST(req, res, next){
         if(!isValid){
             return res.status(400).json(errors);
         }else{
@@ -25,9 +25,9 @@ module.exports = function(){
 
     GET.apiDoc = {
         summary: "gets all users",
-        parameters: [
-            {$ref: "#/components/parameters/schemas/users"}
-        ],
+        // parameters: [
+        //     {$ref: "#/components/parameters/schemas/users"}
+        // ],
         operationId: "getUsers",
         responses:{
             '200':{
@@ -56,5 +56,5 @@ module.exports = function(){
         }
     }
 
-
+    return operations
 }

@@ -24,10 +24,10 @@ module.exports = function(){
     //APIDOC STUFF
     GET.apiDoc = {
         summary: "gets all games",
-        parameters: [
+        // parameters: [
 
-            {$ref: "#/components/parameters/schemas/games"}
-        ],
+        //     {$ref: "#/components/parameters/schemas/games"}
+        // ],
         operationId: "getGames",
         responses:{
             '200':{
@@ -55,4 +55,5 @@ module.exports = function(){
             }
         }
     }
+    return operations
 }

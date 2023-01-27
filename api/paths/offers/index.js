@@ -31,9 +31,9 @@ module.exports = function (){
 ///api doc stuff
     GET.apiDoc = {
         summary: "gets all offers",
-        parameters: [
-            {$ref: "#/components/parameters/schemas/offers"}
-        ],
+        // parameters: [
+        //     {$ref: "#/components/parameters/schemas/offers"}
+        // ],
         operationId: "getOffers",
         responses:{
             '200':{
@@ -79,5 +79,5 @@ module.exports = function (){
     }
 
 
-
+    return operations
 }
