@@ -30,22 +30,22 @@ app.use("/v1/games", gameRoutes)
 app.use("/v1/offers", offersRoute)
 
 
-initialize({
-  app,
-    apiDoc: require("./api/apiDoc"),
-    paths: "./api/paths"
+// initialize({
+//   app,
+//     apiDoc: require("./api/apiDoc"),
+//     paths: "./api/paths"
 
-});
+// });
 
- app.use(
-  "/apiDocs",
-  swaggerUi.serve,
-  swaggerUi.setup(null, {
-    swaggerOptions:{
-      url:"http://localhost:3000/apiDoc"
-    }
-  })
- );
+//  app.use(
+//   "/apiDocs",
+//   swaggerUi.serve,
+//   swaggerUi.setup(null, {
+//     swaggerOptions:{
+//       url:"http://localhost:3000/apiDoc"
+//     }
+//   })
+//  );
 
 const port = process.env.port ||3050;
 app.listen(port, () => console.log("Listening on port: " + port));

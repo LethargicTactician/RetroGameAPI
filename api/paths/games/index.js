@@ -42,9 +42,9 @@ module.exports = function(){
 
     POST.apiDoc={
         summary: "register a game",
-        parameters:[
-            {$ref: "#/componets/parameters/schemas/games"}
-        ],
+        // parameters:[
+        //     {$ref: "#/componets/parameters/schemas/games"}
+        // ],
         operationId:"registerGame",
         responses:{
             '200':{
@@ -55,5 +55,5 @@ module.exports = function(){
             }
         }
     }
-    return operations
+    return operations;
 }
